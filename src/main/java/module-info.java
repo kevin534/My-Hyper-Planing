@@ -2,6 +2,8 @@ module com.hyperplanning {
     requires lombok;
     requires commons.dbcp2;
     requires java.sql;
+    requires javafx.graphics;
+    requires javafx.fxml;
 
     opens com.hyperplanning to javafx.fxml;
     exports com.hyperplanning;
