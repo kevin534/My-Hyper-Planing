@@ -1,5 +1,7 @@
 package com.hyperplanning;
 
+import com.hyperplanning.entities.Enseignant;
+import com.hyperplanning.entities.Etudiant;
 import com.hyperplanning.entities.Utilisateur;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +19,8 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-
+        //Utilisation builder
+        //Enseignant enseignant = Enseignant.builder().build();
     }
 
     public static void main(String[] args) {

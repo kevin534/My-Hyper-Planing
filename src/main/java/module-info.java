@@ -1,11 +1,7 @@
 module com.hyperplanning {
-    requires javafx.controls;
-    requires javafx.fxml;
-
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires org.kordamp.bootstrapfx.core;
     requires lombok;
+    requires commons.dbcp2;
+    requires java.sql;
 
     opens com.hyperplanning to javafx.fxml;
     exports com.hyperplanning;
