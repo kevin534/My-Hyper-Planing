@@ -1,4 +1,5 @@
 package com.hyperplanning.entities;
+import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
