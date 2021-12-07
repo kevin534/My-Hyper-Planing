@@ -9,7 +9,7 @@ import java.util.Optional;
 
 interface Dao<E> extends AutoCloseable{
 
-    Optional<E> find(long id) throws DataAccessException;
+    Optional<E> find(int id) throws DataAccessException;
 
     List<E> findAll() throws DataAccessException;
 

@@ -43,10 +43,10 @@ public abstract class AbstractDao<E> implements Dao<E>{
 
     public abstract String getTableName();
 
-    public Optional<E> find(long id) throws DataAccessException {
+    public Optional<E> find(int id) throws DataAccessException {
         E entity = null;
         try {
-            findPS.setLong(1, id);
+            findPS.setInt(1, id);
             ResultSet rs = findPS.executeQuery();
             while (rs.next())
                 entity = fromResultSet(rs);
@@ -72,12 +72,12 @@ public abstract class AbstractDao<E> implements Dao<E>{
 
 
     public E persist() throws DataAccessException, NotFoundException {
-        long id = -1;
+        int id = -1;
         try {
             persistPS.executeUpdate();
             ResultSet rs = persistPS.getGeneratedKeys();
             if (rs.next()) {
-                id = rs.getLong(1);
+                id = rs.getInt(1);
                 log.fine("Generated PK = " + id);
             }
         } catch (SQLException e) {

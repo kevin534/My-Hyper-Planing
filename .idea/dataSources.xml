@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hyperplanning@localhost" uuid="9d6b6881-ebde-4be3-8b08-d58597ffaa0f">
+    <data-source source="LOCAL" name="hyperplanning@localhost" uuid="734224c9-5654-4564-88cd-a5aa78f45562">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
