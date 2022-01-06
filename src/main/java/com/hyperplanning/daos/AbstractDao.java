@@ -3,6 +3,7 @@ package com.hyperplanning.daos;
 import com.hyperplanning.dataSource.DBCPDataSource;
 import com.hyperplanning.exceptions.DataAccessException;
 import com.hyperplanning.exceptions.NotFoundException;
+
 import lombok.extern.java.Log;
 
 import java.sql.*;
@@ -30,7 +31,7 @@ public abstract class AbstractDao<E> implements Dao<E>{
             _persistPS = _connection.prepareStatement(persistPS, Statement.RETURN_GENERATED_KEYS);
             _updatePS = _connection.prepareStatement(updatePS);
         } catch (SQLException throwables) {
-            log.log(Level.SEVERE, "Erreur de création de la DAO: "+throwables.getMessage());
+            //log.log(Level.SEVERE, "Erreur de création de la DAO: "+throwables.getMessage());
             //new DataAccessException(throwables.getLocalizedMessage());
         }
         this.connection = _connection;
@@ -38,7 +39,7 @@ public abstract class AbstractDao<E> implements Dao<E>{
         this.findAllPS = _findAllPS;
         this.persistPS = _persistPS;
         this.updatePS = _updatePS;
-        log.warning(getTableName() + " DAO Created.");
+        //log.warning(getTableName() + " DAO Created.");
     }
 
     public abstract String getTableName();
@@ -56,7 +57,7 @@ public abstract class AbstractDao<E> implements Dao<E>{
         return Optional.ofNullable(entity);
     }
 
-    protected abstract E fromResultSet(ResultSet resultSet) throws SQLException;
+    public abstract E fromResultSet(ResultSet resultSet) throws SQLException;
 
     @Override
     public List<E> findAll() throws DataAccessException {
@@ -78,7 +79,7 @@ public abstract class AbstractDao<E> implements Dao<E>{
             ResultSet rs = persistPS.getGeneratedKeys();
             if (rs.next()) {
                 id = rs.getInt(1);
-                log.fine("Generated PK = " + id);
+                //log.fine("Generated PK = " + id);
             }
         } catch (SQLException e) {
             throw new DataAccessException(e.getLocalizedMessage());

@@ -9,18 +9,23 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SalleDao extends AbstractDao<Salle>{
-    public SalleDao(String persistPS, String updatePS) {
-        super(persistPS, updatePS);
+    public SalleDao() {
+        super("INSERT INTO SALLES(LIBELLESALLE,BATIMENT) VALUES (?,?)",
+                "UPDATE SALLES SET LIBELLESALLE=?, BATIMENT=? WHERE ID=?");
     }
 
     @Override
     public String getTableName() {
-        return null;
+        return "SALLES";
     }
 
     @Override
-    protected Salle fromResultSet(ResultSet resultSet) throws SQLException {
-        return null;
+    public Salle fromResultSet(ResultSet resultSet) throws SQLException {
+        return Salle.builder()
+                .codeSalle(resultSet.getInt("id"))
+                .libelleSalle(resultSet.getString("libelleSalle"))
+                .batiment(resultSet.getString("batimentSalle"))
+                .build();
     }
 
     @Override

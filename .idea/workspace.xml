@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b13a0c68-467b-4114-9824-0d1e3bdb0437" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/images/icons8_Calendar_18_52px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/images/icons8_Calendar_19_52px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/images/icons8_Trash_Can_64px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/images/icons8_Upload_to_Cloud_48px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/images/owk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dlsc_formsfx_formsfx_core_11_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_10_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_controlsfx_controlsfx_11_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_kordamp_bootstrapfx_bootstrapfx_core_0_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_2_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/My-Hyperplanning.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/AbstractDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/CoursDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/CoursDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/EnseignantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/EnseignantDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/EtudiantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/EtudiantDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/GroupeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/GroupeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/MatiereDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/MatiereDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/ResponsableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/ResponsableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/SalleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/SalleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/UtilisateurDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/daos/UtilisateurDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/dataSource/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/dataSource/DBCPDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Cours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Enseignant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Etudiant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Groupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Groupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Responsable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyperplanning/entities/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/views/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hyperplanning/views/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/AbstractDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/AbstractDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/CoursDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/CoursDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/Dao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/EnseignantDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/EnseignantDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/EtudiantDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/EtudiantDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/GroupeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/GroupeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/MatiereDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/MatiereDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/ResponsableDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/ResponsableDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/SalleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/SalleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/UtilisateurDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/daos/UtilisateurDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/dataSource/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/dataSource/DBCPDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Cours$CoursBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Cours$CoursBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Cours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Cours.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant$EnseignantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant$EnseignantBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant$EnseignantBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant$EnseignantBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Enseignant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant$EtudiantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant$EtudiantBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant$EtudiantBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant$EtudiantBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Etudiant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Groupe$GroupeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Groupe$GroupeBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Groupe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Groupe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Matiere$MatiereBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Matiere$MatiereBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Matiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Matiere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable$ResponsableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable$ResponsableBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable$ResponsableBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable$ResponsableBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Responsable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Salle$SalleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Salle$SalleBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Salle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Salle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur$UtilisateurBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur$UtilisateurBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur$UtilisateurBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur$UtilisateurBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/entities/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/exceptions/DataAccessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/exceptions/DataAccessException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/exceptions/NotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/exceptions/NotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hyperplanning/views/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hyperplanning/views/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="22PQIdPmETKelTdD680SZeWfxPn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/hyperplanning/views" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.30804598" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main\resources\com\hyperplanning\views" />
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main\resources\com\hyperplanning\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main\java\com\hyperplanning" />
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main" />
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main\resources\com\hyperplanning\views" />
+      <recent name="C:\Users\regis\My-Hyperplanning2\src\main\java\com\hyperplanning\entities" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.hyperplanning" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hyperplanning.App" />
+      <module name="My-Hyperplanning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyperplanning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hyperplanning.HelloApplication" />
+      <module name="My-Hyperplanning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyperplanning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b13a0c68-467b-4114-9824-0d1e3bdb0437" name="Changes" comment="" />
+      <created>1639736664926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639736664926</updated>
+      <workItem from="1639736666576" duration="1434000" />
+      <workItem from="1640283710471" duration="4368000" />
+      <workItem from="1640289367468" duration="8457000" />
+      <workItem from="1640298997367" duration="2250000" />
+      <workItem from="1640510964431" duration="38462000" />
+      <workItem from="1641202512519" duration="204000" />
+      <workItem from="1641237611975" duration="24879000" />
+      <workItem from="1641323067156" duration="5261000" />
+      <workItem from="1641408358624" duration="18461000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

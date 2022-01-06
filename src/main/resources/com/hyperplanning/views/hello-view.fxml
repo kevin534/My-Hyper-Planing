@@ -1,16 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.hyperplanning.entities.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #74992e;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hyperplanning.HelloController">
+    <children>
+        <VBox layoutX="8.0" layoutY="62.0" prefHeight="222.0" prefWidth="60.0" spacing="25.0">
+            <children>
+                <Label prefHeight="43.0" prefWidth="80.0" styleClass="" stylesheets="@style.css" text="Enseignant">
+                    <VBox.margin>
+                        <Insets top="3.0" />
+                    </VBox.margin></Label>
+                <Label layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="37.0" styleClass="" stylesheets="@style.css" text="Cours">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+               <padding>
+                  <Insets top="-14.0" />
+               </padding></Label>
+                <Label layoutX="10.0" layoutY="27.0" prefHeight="60.0" prefWidth="43.0" styleClass="" stylesheets="@style.css" text="Salle">
+                    <VBox.margin>
+                        <Insets bottom="21.0" />
+                    </VBox.margin>
+               <padding>
+                  <Insets top="-63.0" />
+               </padding></Label>
+            <Label layoutX="10.0" layoutY="95.0" prefHeight="4.0" prefWidth="71.0" styleClass="" stylesheets="@style.css" text="dateDebut">
+               <padding>
+                  <Insets top="-119.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="97.0" prefHeight="25.0" prefWidth="51.0" styleClass="" stylesheets="@style.css" text="dateFin">
+               <padding>
+                  <Insets top="-91.0" />
+               </padding>
+            </Label>
+                <Label layoutX="10.0" layoutY="97.0" prefHeight="25.0" prefWidth="51.0" styleClass="" stylesheets="@style.css" text="Groupe">
+                    <padding>
+                        <Insets top="-91.0" />
+                    </padding>
+                </Label>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+            </children>
+        </VBox>
+        <VBox layoutX="70.0" layoutY="62.0" prefHeight="272.0" prefWidth="145.0" spacing="15.0">
+            <children>
+                <ComboBox fx:id="liste_enseignant" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="138.0" styleClass="box" stylesheets="@style.css" />
+                <ComboBox fx:id="liste_matiere" layoutX="10.0" layoutY="35.0" minWidth="100.0" prefHeight="25.0" prefWidth="140.0" styleClass="box" stylesheets="@style.css" />
+                <ComboBox fx:id="liste_salle" layoutX="10.0" layoutY="35.0" minWidth="100.0" prefHeight="25.0" prefWidth="140.0" styleClass="box" stylesheets="@style.css" />
+                <ComboBox fx:id="liste_dateDebut" layoutX="10.0" layoutY="35.0" minWidth="100.0" prefHeight="25.0" prefWidth="139.0" styleClass="box" stylesheets="@style.css" />
+                <ComboBox fx:id="liste_dateFin" layoutX="10.0" layoutY="35.0" minWidth="100.0" prefHeight="25.0" prefWidth="139.0" styleClass="box" stylesheets="@style.css" />
+                <ComboBox fx:id="liste_groupe" layoutX="10.0" layoutY="35.0" minWidth="100.0" prefHeight="25.0" prefWidth="139.0" styleClass="box" stylesheets="@style.css" />
+
+            </children>
+        </VBox>
+        <Button fx:id="bsave" onMouseClicked="#handleButtonAction" layoutX="29.0" layoutY="362.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="71.0" styleClass="btn" stylesheets="@style.css" text="Save">
+
+        </Button>
+        <TableView fx:id="table" layoutX="225.0" layoutY="62.0" prefHeight="362.0" prefWidth="541.0">
+            <columns>
+                <TableColumn fx:id="colonne_horaire" prefWidth="58.0" text="Horaire" />
+                <TableColumn fx:id="colonne_lundi" prefWidth="91.0" text="Lundi" />
+                <TableColumn fx:id="colonne_mardi" prefWidth="95.0" text="Mardi" />
+                <TableColumn fx:id="colonne_mercredi" prefWidth="98.66665649414062" text="Mercredi" />
+                <TableColumn fx:id="colonne_jeudi" prefWidth="97.6666259765625" text="Jeudi" />
+                <TableColumn fx:id="colonne_vendredi" prefWidth="101.66668701171875" text="Vendredi" />
+            </columns>
+        </TableView>
+        <Pane layoutX="99.0" layoutY="16.0" prefHeight="45.0" prefWidth="668.0" stylesheets="@style.css">
+            <children>
+                <Label layoutX="250.0" layoutY="11.0" prefHeight="17.0" prefWidth="315.0" text="Date" textFill="#ffc300">
+
+                </Label>
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

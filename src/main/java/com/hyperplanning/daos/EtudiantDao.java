@@ -9,18 +9,29 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EtudiantDao extends AbstractDao<Etudiant>{
-    public EtudiantDao(String persistPS, String updatePS) {
-        super(persistPS, updatePS);
+    public EtudiantDao() {
+        super("INSERT INTO ETUDIANTS(ID,IDGROUPECLASSE) VALUES (?,?)",
+                "UPDATE ETUDIANTS SET ID=?, IDGROUPECLASSE=? WHERE ID=?");
     }
 
     @Override
     public String getTableName() {
-        return null;
+        return "ETUDIANTS";
     }
 
     @Override
-    protected Etudiant fromResultSet(ResultSet resultSet) throws SQLException {
-        return null;
+    public Etudiant fromResultSet(ResultSet resultSet) throws SQLException {
+        Etudiant etudiant =  null;
+        try (GroupeDao groupeDao = new GroupeDao();){
+            etudiant = Etudiant.builder()
+                    .groupeClasse(groupeDao.find(resultSet.getInt("groupeClasse")).orElse(null))
+                    .build();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return etudiant;
     }
 
     @Override

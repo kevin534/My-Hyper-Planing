@@ -11,9 +11,12 @@ public class DBCPDataSource {
 
     static {
 
-        ds.setUrl(App.getProperty("daos.datasource.url"));
-        ds.setUsername(App.getProperty("daos.datasource.username"));
-        ds.setPassword(App.getProperty("daos.datasource.password"));
+        //ds.setUrl(App.getProperty("daos.datasource.url"));
+        ds.setUrl("jdbc:mariadb://localhost:3306/hyperplanning");
+        ds.setUsername("root");
+        //ds.setUsername(App.getProperty("daos.datasource.username"));
+        ds.setPassword("");
+        //ds.setPassword(App.getProperty("daos.datasource.password"));
         ds.setMinIdle(5);
         ds.setMaxIdle(10);
         ds.setMaxOpenPreparedStatements(100);

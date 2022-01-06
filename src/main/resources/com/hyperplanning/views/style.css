@@ -1,0 +1,15 @@
+.labelform{
+    -fx-font-weight: bold;
+    -fx-background-color: #ffc300;
+}
+
+.box{
+    -fx-font-weight: bold;
+}
+
+.field{
+    -fx-font-weight: bold;
+}
+.btn{
+    -fx-font-weight: bold;
+}

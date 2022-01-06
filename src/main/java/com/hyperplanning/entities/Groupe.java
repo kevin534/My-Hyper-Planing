@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class Groupe {
     private int groupeClasse;
+    private String libelleClasse;
 
 
 

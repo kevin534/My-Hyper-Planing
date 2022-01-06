@@ -10,18 +10,22 @@ import java.util.List;
 
 public class MatiereDao extends AbstractDao<Matiere>{
 
-    public MatiereDao(String persistPS, String updatePS) {
-        super(persistPS, updatePS);
+    public MatiereDao() {
+        super("INSERT INTO MATIERES(LIBELLEMATIERE) VALUES (?)",
+                "UPDATE MATIERES SET LIBELLEMATIERE=? WHERE ID=?");
     }
 
     @Override
     public String getTableName() {
-        return null;
+        return "MATIERES";
     }
 
     @Override
-    protected Matiere fromResultSet(ResultSet resultSet) throws SQLException {
-        return null;
+    public Matiere fromResultSet(ResultSet resultSet) throws SQLException {
+        return Matiere.builder()
+                .codeMatiere(resultSet.getInt("id"))
+                .libelleMatiere(resultSet.getString("libelleMatiere"))
+                .build();
     }
 
     @Override

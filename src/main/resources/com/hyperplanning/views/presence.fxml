@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.ComboBox?>
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hyperplanning.PresenceController">
+    <ComboBox fx:id="liste_cours" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="138.0" styleClass="box"  />
+
+    <Button  text="Afficher" onAction="#LoadData" />
+    <!--ComboBox fx:id="liste_C" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="138.0" styleClass="box"  /-->
+    <children>
+
+        <TableView fx:id="list_table"  VBox.vgrow="ALWAYS" >
+            <columns>
+                <TableColumn fx:id="id_col" maxWidth="200.0" minWidth="100.0" prefWidth="-1.0" text="Identifiant" />
+                <TableColumn fx:id="name_col" maxWidth="400.0" minWidth="300.0" prefWidth="-1.0" text="Noms" />
+                <TableColumn fx:id="present_col" maxWidth="100.0" minWidth="90.0" prefWidth="-1.0" text="Present" />
+                <TableColumn fx:id="excuse_col" maxWidth="1.7976931348623157E308" minWidth="400.0"  prefWidth="-1.0" text="Excuse" />
+            </columns>
+        </TableView>
+        <Button text="Enregistrer" onAction="#fairePresence"/>
+
+
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>
+

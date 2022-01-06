@@ -5,11 +5,15 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Data
 public class Utilisateur {
-    private int id;
-    private String nom;
-    private String prenoms;
-    private String email;
-    private String password;
+    public enum role{ENSEIGNANT,ETUDIANT,RESPONSABLE};
+    protected int id;
+    protected String nom;
+    protected String prenoms;
+    protected String email;
+    protected String password;
+    protected String role;
 
+    public Utilisateur(){
+    }
 
 }
