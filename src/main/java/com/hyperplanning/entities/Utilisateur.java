@@ -14,6 +14,12 @@ public class Utilisateur {
     protected String role;
 
     public Utilisateur(){
+        //constructeur
+    }
+
+    @Override
+    public String toString(){
+        return this.nom +" "+ this.prenoms;
     }
 
 }

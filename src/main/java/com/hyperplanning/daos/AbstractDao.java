@@ -3,7 +3,6 @@ package com.hyperplanning.daos;
 import com.hyperplanning.dataSource.DBCPDataSource;
 import com.hyperplanning.exceptions.DataAccessException;
 import com.hyperplanning.exceptions.NotFoundException;
-
 import lombok.extern.java.Log;
 
 import java.sql.*;
@@ -31,26 +30,41 @@ public abstract class AbstractDao<E> implements Dao<E>{
             _persistPS = _connection.prepareStatement(persistPS, Statement.RETURN_GENERATED_KEYS);
             _updatePS = _connection.prepareStatement(updatePS);
         } catch (SQLException throwables) {
-            //log.log(Level.SEVERE, "Erreur de création de la DAO: "+throwables.getMessage());
+            log.log(Level.SEVERE, "Erreur de création de la DAO: "+throwables.getMessage());
             //new DataAccessException(throwables.getLocalizedMessage());
+        }finally {
+
+                try {
+                    if(_findPS!=null)
+                        _findPS.close();
+                    if(_connection!=null)
+                        _connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+
+            }
         }
         this.connection = _connection;
         this.findPS = _findPS;
         this.findAllPS = _findAllPS;
         this.persistPS = _persistPS;
         this.updatePS = _updatePS;
-        //log.warning(getTableName() + " DAO Created.");
+        log.warning(getTableName() + " DAO Created.");
     }
 
     public abstract String getTableName();
 
     public Optional<E> find(int id) throws DataAccessException {
         E entity = null;
-        try {
-            findPS.setInt(1, id);
-            ResultSet rs = findPS.executeQuery();
-            while (rs.next())
-                entity = fromResultSet(rs);
+        try( Connection _connection = DBCPDataSource.getConnection();
+            PreparedStatement _findPS = _connection.prepareStatement("SELECT * FROM " + getTableName() + " WHERE ID=?");
+           ) {
+            _findPS.setInt(1, id);
+            try (ResultSet rs = _findPS.executeQuery();){
+                while (rs.next())
+                    entity = fromResultSet(rs);
+            }
+
         } catch (SQLException e) {
             throw new DataAccessException(e.getLocalizedMessage());
         }
@@ -62,8 +76,10 @@ public abstract class AbstractDao<E> implements Dao<E>{
     @Override
     public List<E> findAll() throws DataAccessException {
         List<E> entityList = new ArrayList<>();
-        try {
-            ResultSet rs = findAllPS.executeQuery();
+        try ( Connection _connection = DBCPDataSource.getConnection();
+             PreparedStatement _findAllPS = _connection.prepareStatement("SELECT * FROM " + getTableName() + " WHERE ID=?");
+        ) {
+            ResultSet rs = _findAllPS.executeQuery();
             while (rs.next()) entityList.add(fromResultSet(rs));
         } catch (SQLException e) {
             throw new DataAccessException(e.getLocalizedMessage());
@@ -79,7 +95,7 @@ public abstract class AbstractDao<E> implements Dao<E>{
             ResultSet rs = persistPS.getGeneratedKeys();
             if (rs.next()) {
                 id = rs.getInt(1);
-                //log.fine("Generated PK = " + id);
+                log.fine("Generated PK = " + id);
             }
         } catch (SQLException e) {
             throw new DataAccessException(e.getLocalizedMessage());
@@ -97,9 +113,11 @@ public abstract class AbstractDao<E> implements Dao<E>{
     }
 
     @Override
-    public void remove(long id) throws DataAccessException {
-        try {
-            connection.createStatement().execute("DELETE FROM " + getTableName() + " WHERE ID=" + id);
+    public void remove(int id) throws DataAccessException {
+
+        try ( Connection _connection = DBCPDataSource.getConnection();
+                Statement statement = _connection.prepareStatement("SELECT * FROM " + getTableName() + " WHERE ID=?");){
+            statement.execute("DELETE FROM " + getTableName() + " WHERE ID=" + id);
         } catch (SQLException throwables) {
             throw new DataAccessException(throwables.getLocalizedMessage());
         }

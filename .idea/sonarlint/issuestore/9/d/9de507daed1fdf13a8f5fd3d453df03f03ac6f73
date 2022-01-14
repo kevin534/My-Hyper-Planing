@@ -1,0 +1,25 @@
+
+—
+java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÿà¡Â
+œ
+java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÔªıÿÿÿÿ
+–
+java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©éÑr
+Z
+java:S21470"DCombine this catch with the one at line 46, which has the same body.(ßÈ´
+a
+java:S21472"DCombine this catch with the one at line 46, which has the same body.(”ı¾8”ú–å/
+J
+java:S1185?"(Remove this method to simply inherit it.(¦ÎÜÇüÿÿÿÿ8×ü—å/
+J
+java:S1185N"(Remove this method to simply inherit it.(Şõ»Íıÿÿÿÿ8×ü—å/
+j
+java:S1128"HRemove this unused import 'com.hyperplanning.dataSource.DBCPDataSource'.(¯ö«Èşÿÿÿÿ8×ü—å/
+`
+java:S1128"CRemove this unused import 'com.hyperplanning.entities.Utilisateur'.(‹±º 8×ü—å/
+Q
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8×ü—å/
+g
+java:S2259*"EA "NullPointerException" could be thrown; "orElse()" can return null.(ƒÏÛşÿÿÿÿ8×ü—å/
+g
+java:S2259+"EA "NullPointerException" could be thrown; "orElse()" can return null.(å©üÊıÿÿÿÿ8×ü—å/

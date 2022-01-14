@@ -39,6 +39,7 @@ import java.util.ResourceBundle;
  */
 public class LoginController implements Initializable {
     String role;
+    int id;
     Connection conn;
     PreparedStatement pstmt;
     ResultSet rs;
@@ -56,7 +57,7 @@ public class LoginController implements Initializable {
     protected static final Properties properties = new Properties();
 
     static void loadProperties(String propFileName) throws IOException {
-        InputStream inputstream = App.class.getClassLoader().getResourceAsStream(propFileName);
+        InputStream inputstream = LoginController.class.getClassLoader().getResourceAsStream(propFileName);
         if (inputstream == null) throw new FileNotFoundException();
         properties.load(inputstream);
     }
@@ -64,7 +65,6 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //mettre la connection de la BD
         try {
-
             loadProperties("app.properties");
             conn = DBCPDataSource.getConnection();
             lgbtn.setOnAction(e-> login());
@@ -74,32 +74,15 @@ public class LoginController implements Initializable {
         //test unitaires
 
     }
-    /**
-     public void released() {
 
-     String sql = "SELECT * FROM SIGNUP WHERE USERNAME=?";
-     try{
 
-     pstmt = conn.prepareStatement(sql);
-     pstmt.setString(1,username.getText());
-     rs = pstmt.executeQuery();
-     if(rs.next()){
-     put.setText(rs.getString("USER_ID"));
 
-     }
-     }catch(Exception e){
-     JOptionPane.showMessageDialog(null , e);
-     }
-     }**/
     private void login() {
-        //  released();
+
         if(username.getText().isEmpty() || password.getText().isEmpty()){
             emptyMessage();
         }else{
-            //Statement statement = DBCPDataSource.getConnection().createStatement();
-
-            //ResultSet resultSet = statement.executeQuery("SELECT * FROM SIGNUP WHERE ID=? AND Password=?");
-            String sqll = "SELECT * FROM UTILISATEURS WHERE EMAIL=? AND PASSWORD=?";
+              String sqll = "SELECT * FROM UTILISATEURS WHERE EMAIL=? AND PASSWORD=?";
             try{
                 pstmt = conn.prepareStatement(sqll);
                 pstmt.setString(1 , username.getText());
@@ -107,18 +90,20 @@ public class LoginController implements Initializable {
                 rs = pstmt.executeQuery();
                 if(rs.next()){
                     role = rs.getString("role");
-
+                    id = rs.getInt("id");
 
                     Stage stage = new Stage();
-                    FXMLLoader loader = new FXMLLoader(
-                            getClass().getResource("views/menu.fxml"));
-                    //AnchorPane frame = loader.load();
+                    HomeController homeController = new HomeController(role,id);
+                    FXMLLoader loader;
+
+                        loader = new FXMLLoader(getClass().getResource("views/home.fxml"));
+
+
+                    loader.setController(homeController);
 
                     Parent root = loader.load();
-                    Scene scene = new Scene(root);
 
-
-                    stage.setScene(scene);
+                    stage.setScene(new Scene(root));
                     stage.setResizable(false);
                     stage.centerOnScreen();
                     stage.setTitle("HOME");
@@ -138,31 +123,10 @@ public class LoginController implements Initializable {
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null , e);
             }
+
         }
     }
-    /*@FXML
-    public void handleButtonAction(ActionEvent event) throws IOException {
-        loadwindow("SignUp.fxml","SIGN UP");
 
-    }*/
-
-    /*void loadwindow(String loc ,  String title){
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(loc));
-            Stage stage = new Stage();
-            stage.setTitle(title);
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }*/
 
     private void emptyMessage(){
         Image img = new Image("@images/owk.png");

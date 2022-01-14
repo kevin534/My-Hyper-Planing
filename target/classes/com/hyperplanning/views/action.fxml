@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+        <children>
+            <Group StackPane.alignment="CENTER">
+                <children>
+
+        <Text layoutX="11.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Gérer Cours">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Text>
+        <ComboBox fx:id="timeAction" layoutX="18.0" layoutY="91.0" prefHeight="25.0" prefWidth="341.0"
+                  promptText="Heure"/>
+
+        <ComboBox fx:id="cvenueAction" layoutX="19.0" layoutY="140.0" prefHeight="25.0" prefWidth="341.0"
+                  promptText="Salle"/>
+                    <DatePicker fx:id="CreneauAction" layoutX="19.0" layoutY="188.0" prefHeight="25.0" prefWidth="138.0" />
+                     <JFXButton fx:id="cancel" layoutX="10.0" layoutY="405.0"  prefHeight="31.0"
+                   prefWidth="121.0"
+                   style="-fx-background-color: grey; -fx-background-radius: 8px;" text="Cancel"
+                   textFill="WHITE" >
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="modifier" layoutX="200.0" layoutY="405.0"  prefHeight="31.0"
+                   prefWidth="121.0"
+                   style="-fx-background-color: green; -fx-background-radius: 8px;" text="Update"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="supprimer" layoutX="390.0" layoutY="405.0"  prefHeight="31.0"
+                   prefWidth="121.0"
+                   style="-fx-background-color: red; -fx-background-radius: 8px;" text="Delete"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </JFXButton>
+        <TextField fx:id="levelTableAction" layoutX="19.0" layoutY="45.0" prefHeight="25.0"
+                  prefWidth="341.0" promptText="Subject"/>
+        <TextField fx:id="leturerTableAction"  layoutX="18.0" layoutY="236.0" prefHeight="25.0"
+                  prefWidth="341.0" promptText="Teacher"/>
+                </children>
+            </Group>
+        </children>
+        </StackPane>
+    </children>
+
+</AnchorPane>

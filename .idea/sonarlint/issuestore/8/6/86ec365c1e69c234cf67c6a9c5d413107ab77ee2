@@ -1,0 +1,26 @@
+
+i	java:S116"URename this field "list_table" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïõõ,
+k	java:S116"VRename this field "liste_cours" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¦åå
+k	java:S116%"QRename this field "id_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÛïôÿÿÿÿÿ
+h	java:S116'"SRename this field "name_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù±ÜÃ
+p	java:S116)"VRename this field "present_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÑËËøÿÿÿÿ
+j	java:S116+"URename this field "excuse_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«Õ³„
+Q	java:S125!"<This block of commented-out lines of code should be removed.(ü¯«„
+V	java:S1252"<This block of commented-out lines of code should be removed.(Ñ¡ÂÀúÿÿÿÿ
+t
+java:S11716"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(ñ¤ûúÿÿÿÿ8Ÿ´Â»å/
+N
+java:S1602M",Remove useless curly braces around statement(íû»ñøÿÿÿÿ8Ðó¥»å/
+N
+java:S1602c",Remove useless curly braces around statement(¯Ô›ìùÿÿÿÿ8‹öÑ»å/
+b	java:S100h"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÌÁl
+V	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(ØŸ¦8…÷Ç»å/
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8ž°Ø»å/
+C
+java:S1068/"-Remove this unused "presences" private field.(éãÿû
+B
+java:S10683"'Remove this unused "cal" private field.(åÉûûûÿÿÿÿ
+a
+java:S2095V"FUse try-with-resources or close this "CoursDao" in a "finally" clause.( Åˆúÿÿÿÿ

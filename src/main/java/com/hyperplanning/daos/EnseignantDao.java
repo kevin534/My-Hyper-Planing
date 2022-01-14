@@ -1,16 +1,21 @@
 package com.hyperplanning.daos;
 
+import com.hyperplanning.dataSource.DBCPDataSource;
 import com.hyperplanning.entities.Enseignant;
 import com.hyperplanning.entities.Matiere;
 import com.hyperplanning.entities.Utilisateur;
 import com.hyperplanning.exceptions.DataAccessException;
 import com.hyperplanning.exceptions.NotFoundException;
+import lombok.extern.java.Log;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
+
+@Log
 public class EnseignantDao extends AbstractDao<Enseignant> {
     public EnseignantDao() {
         super("INSERT INTO ENSEIGNANTS(ID,CODEMATIERE) VALUES (?,?)",
@@ -23,12 +28,12 @@ public class EnseignantDao extends AbstractDao<Enseignant> {
     }
 
     @Override
-    public Enseignant fromResultSet(ResultSet resultSet) throws SQLException {
+    public Enseignant fromResultSet(ResultSet resultSet){
         Enseignant enseignant = null;
         List<Matiere> mat = new ArrayList<>();
-        
+
         try(MatiereDao matiereDao = new MatiereDao();
-        UtilisateurDao utilisateurDao = new UtilisateurDao()){
+            UtilisateurDao utilisateurDao = new UtilisateurDao()){
 
             mat.add(matiereDao.find(resultSet.getInt("codeMatiere")).orElse(null));
 
@@ -38,7 +43,11 @@ public class EnseignantDao extends AbstractDao<Enseignant> {
                     .prenoms(utilisateurDao.find(resultSet.getInt("id")).orElse(null).getPrenoms())
                     .matiere(mat)
                     .build();
-        }catch (Exception e) {
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -57,6 +66,11 @@ public class EnseignantDao extends AbstractDao<Enseignant> {
 
     @Override
     public void update(Enseignant enseignant) throws DataAccessException {
+
+    }
+
+    @Override
+    public void remove(int id) throws DataAccessException {
 
     }
 

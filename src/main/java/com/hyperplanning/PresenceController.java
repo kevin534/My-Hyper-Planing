@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
+import javax.swing.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.Calendar;
@@ -19,10 +20,15 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class PresenceController implements Initializable {
+    int idEnseignant;
     @FXML
     private TableView<Etudiant> list_table;
     @FXML
     private ComboBox<Cours> liste_cours;
+    @FXML
+    private Button makePresence;
+    @FXML
+    private Button showCours;
 
   //  private ComboBox<Integer> liste_C;
     @FXML
@@ -44,6 +50,7 @@ public class PresenceController implements Initializable {
     //private ObservableList<Integer> cours_C = FXCollections.observableArrayList();
     private Calendar cal = Calendar.getInstance();
     Connection  connection;
+    Cours courSelected;
     {
         try {
             connection = DBCPDataSource.getConnection();
@@ -51,8 +58,11 @@ public class PresenceController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public PresenceController(int id){this.idEnseignant = id;}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(idEnseignant);
        // load table on class start
         // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -64,10 +74,15 @@ public class PresenceController implements Initializable {
         excuse_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
         list_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY); // resize column based on whole table(window) size
 
-        Statement statement = null;
-        try {
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM cours ");
+        showCours.setOnAction(actionEvent ->  {
+            //... do something in here.
+            LoadData();
+
+        });
+
+        try(Statement statement = connection.createStatement();) {
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM cours where idEnseignants="+idEnseignant);
             CoursDao coursDao = new CoursDao();
             while(resultSet.next()) {
                 cours.add(coursDao.fromResultSet(resultSet));
@@ -75,7 +90,16 @@ public class PresenceController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
         liste_cours.setItems(cours);
+
+
+
+        makePresence.setOnAction(actionEvent ->  {
+            //... do something in here.
+           fairePresence();
+        });
     }
     public  void LoadData() {
         //list_table.getItems().clear(); // clear table content before adding them again
@@ -85,10 +109,10 @@ public class PresenceController implements Initializable {
         }
     }
     private void nextAction() {
-        Statement statement = null;
-        try {
-            statement = connection.createStatement();
-            Cours courSelected = liste_cours.getValue();
+
+        try (Statement statement = connection.createStatement();){
+
+            courSelected = liste_cours.getSelectionModel().getSelectedItem();
             ResultSet rs = statement.executeQuery("SELECT * FROM utilisateurs  INNER JOIN etudiants  ON utilisateurs.id = etudiants.id "
                     +"where idGroupeClasse = "
                     +courSelected.getGroupe().getGroupeClasse());
@@ -97,212 +121,46 @@ public class PresenceController implements Initializable {
                 // store each row in a student object
                 students.add(new Etudiant(rs.getInt("id"), rs.getString("nom"),
                         rs.getString("prenoms"), rs.getString("email"),rs.getString("password"),
-                        rs.getBoolean("present")));
+                        rs.getBoolean("present"),rs.getString("excuse")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     public void fairePresence() {
+        System.out.println(students);
 
-        ObservableList<Matiere> matieresList = FXCollections.observableArrayList();
-        Matiere matiere = Matiere.builder().libelleMatiere("Math").codeMatiere(1).build();
-        matieresList.add(matiere);
-        Enseignant enseignant = Enseignant.builder().id(1).nom("DJESSOU").prenoms("MAHUGNON").email("regisdjessou2@gmail.com").password("abcd")
-                .matiere(matieresList).build();
-        Salle salle = Salle.builder().codeSalle(1).libelleSalle("U001").batiment("Bat U").build();
-        Groupe groupe = Groupe.builder().groupeClasse(9).libelleClasse("M2 infos").build();
-        Date dateFin = new Date(2020, 05, 25);
-        Date dateDebut = new Date(2020, 05, 25);
-        Cours cours = Cours.builder().id(1).enseignant(enseignant).groupe(groupe).salle(salle).matiere(matiere).dateDebut(dateDebut).dateFin(dateFin).build();
         for (Etudiant stud : students) {
-            PreparedStatement preparedStatement = null;
-            try {
-                String query = "INSERT INTO PRESENCE(ID,IDCOURS,PRESENT) VALUES (?,?,?)";
-                preparedStatement = Objects.requireNonNull(connection).prepareStatement(query);
-                preparedStatement.setInt(1,stud.getId());
-                preparedStatement.setInt(2,cours.getId());
-                preparedStatement.setBoolean(3,stud.getPresent().isSelected());
-                preparedStatement.executeQuery();
+            try (Statement statement = connection.createStatement();)
+            {
+
+                // selects the courses for which the student is absent
+
+
+
+                    String query = "INSERT INTO PRESENCE(ID,IDCOURS,PRESENT,EXCUSE) VALUES (?,?,?,?)";
+                    try ( PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+                        preparedStatement.setInt(1, stud.getId());
+                        preparedStatement.setInt(2, courSelected.getId());
+                        preparedStatement.setBoolean(3, stud.getPresent().isSelected());
+                        preparedStatement.setString(4, stud.getExcuse());
+                        preparedStatement.executeQuery();
+
+                        JOptionPane.showMessageDialog(null ,"Presence done!");
+
+
+                    }
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.println("Error");
-            }
-        }
-             /*
-            PresenceDao presenceDao = new PresenceDao();
-          System.out.println("my stud: 2" + presenceDao);
-            ObservableList<Matiere> matieresList = FXCollections.observableArrayList();
-            System.out.println("my stud: 3");
-            Matiere matiere = Matiere.builder().libelleMatiere("Math").codeMatiere(1).build();
-            matieresList.add(matiere);
-            System.out.println("my stud: 4");
-            Enseignant enseignant = Enseignant.builder().id(1).nom("DJESSOU").prenoms("MAHUGNON").email("regisdjessou2@gmail.com").password("abcd")
-                    .matiere(matieresList).build();
-            Salle salle = Salle.builder().codeSalle(1).libelleSalle("U001").batiment("Bat U").build();
-            Groupe groupe = Groupe.builder().groupeClasse(9).libelleClasse("M2 infos").build();
-            Date dateFin = new Date(2020, 05, 25);
-            Date dateDebut = new Date(2020, 05, 25);
-            Cours cours = Cours.builder().id(1).enseignant(enseignant).groupe(groupe).salle(salle).matiere(matiere).dateDebut(dateDebut).dateFin(dateFin).build();
-            System.out.println("my stud: n");
-            for (Etudiant stud : students) {
 
-            System.out.println("my stud: 1");
-            try {
-                presenceDao.persist(stud,  cours,stud.getPresent().isSelected());
-            } catch (NotFoundException e) {
-                e.printStackTrace();
-            } catch (DataAccessException e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null ,"Presence of this course was done!");
+
             }
-        }
-        */
+
 
     }
 
 }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
- public void fairePresence() {
-
-            PresenceDao presenceDao = new PresenceDao();
-          System.out.println("my stud: 2" + presenceDao);
-            ObservableList<Matiere> matieresList = FXCollections.observableArrayList();
-            System.out.println("my stud: 3");
-            Matiere matiere = Matiere.builder().libelleMatiere("Math").codeMatiere(1).build();
-            matieresList.add(matiere);
-            System.out.println("my stud: 4");
-            Enseignant enseignant = Enseignant.builder().id(1).nom("DJESSOU").prenoms("MAHUGNON").email("regisdjessou2@gmail.com").password("abcd")
-                    .matiere(matieresList).build();
-            Salle salle = Salle.builder().codeSalle(1).libelleSalle("U001").batiment("Bat U").build();
-            Groupe groupe = Groupe.builder().groupeClasse(9).libelleClasse("M2 infos").build();
-            Date dateFin = new Date(2020, 05, 25);
-            Date dateDebut = new Date(2020, 05, 25);
-            Cours cours = Cours.builder().id(1).enseignant(enseignant).groupe(groupe).salle(salle).matiere(matiere).dateDebut(dateDebut).dateFin(dateFin).build();
-            System.out.println("my stud: n");
-            for (Etudiant stud : students) {
-
-            System.out.println("my stud: 1");
-            try {
-                presenceDao.persist(stud,  cours,stud.getPresent().isSelected());
-                System.out.println("my stud: nn"+((Cours) cours).getId());
-            } catch (NotFoundException e) {
-                e.printStackTrace();
-            } catch (DataAccessException e) {
-                e.printStackTrace();
-            }
-        }
-
-ObservableList<Matiere> matieresList = FXCollections.observableArrayList();
-        System.out.println("my stud: 3");
-                Matiere matiere = Matiere.builder().libelleMatiere("Math").codeMatiere(1).build();
-                matieresList.add(matiere);
-                System.out.println("my stud: 4");
-                Enseignant enseignant = Enseignant.builder().id(1).nom("DJESSOU").prenoms("MAHUGNON").email("regisdjessou2@gmail.com").password("abcd")
-                .matiere(matieresList).build();
-                Salle salle = Salle.builder().codeSalle(1).libelleSalle("U001").batiment("Bat U").build();
-                Groupe groupe = Groupe.builder().groupeClasse(9).libelleClasse("M2 infos").build();
-                Date dateFin = new Date(2020, 05, 25);
-                Date dateDebut = new Date(2020, 05, 25);
-                Cours cours = Cours.builder().id(1).enseignant(enseignant).groupe(groupe).salle(salle).matiere(matiere).dateDebut(dateDebut).dateFin(dateFin).build();
-                System.out.println("my stud: n");
-                for (Etudiant stud : students) {
-                PreparedStatement preparedStatement = null;
-                try {
-                String query = "INSERT INTO PRESENCE(ID,IDCOURS,PRESENT) VALUES (?,?,?)";
-                preparedStatement = Objects.requireNonNull(connection).prepareStatement(query);
-                preparedStatement.setInt(1,stud.getId());
-                preparedStatement.setInt(2,cours.getId());
-                preparedStatement.setBoolean(3,stud.getPresent().isSelected());
-                preparedStatement.executeQuery();
-                } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Error");
-                }
-                }
-
-        for (Etudiant stud : students) {
-
-            PresenceDao presenceDao = new PresenceDao();
-            System.out.println("my stud: 1");
-            try {
-                presenceDao.persist(stud, (Cours) cours,stud.getPresent().isSelected());
-                System.out.println("my stud: nn"+((Cours) cours).getId());
-            } catch (NotFoundException e) {
-                e.printStackTrace();
-            } catch (DataAccessException e) {
-                e.printStackTrace();
-            }
-        }
-                }
-
- */
-
-/*
-
- public void LoadData() {
-        //list_table.getItems().clear(); // clear table content before adding them again
-        if (liste_cours.getValue() != null){
-            System.out.println("liste  "+liste_cours.getValue());
-           // Cours courSelected = liste_cours.getValue();
-            Statement statement = null;
-            try {
-                //Connection connection = DBCPDataSource.getConnection();
-               statement = DBCPDataSource.getConnection().createStatement();
-                System.out.println("Hi ------"+statement);
-                String query = "SELECT * FROM utilisateurs  INNER JOIN etudiants  ON utilisateurs.id = etudiants.id ";
-               // PreparedStatement preparedStatement = connection.prepareStatement(query);
-
-               // statement.setInt(1,courSelected.getId());
-                ResultSet rs = statement.executeQuery(query);
-                // EtudiantDao etudiantDao = new EtudiantDao();
-
-                while (rs.next()) {
-                    // store each row in a student object
-                    //students.add(etudiantDao.fromResultSet(rs));
-                    students.add(new Etudiant(rs.getInt("id"), rs.getString("nom"),
-                            rs.getString("prenoms"), rs.getString("email"),rs.getString("password"),
-                            rs.getBoolean("present")));
-                }
-                System.out.println(students);
-               // rs.close(); // close statement
-                //DBCPDataSource.getConnection().close(); // close connection for now
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
- */

@@ -18,16 +18,22 @@ public class UtilisateurDao extends AbstractDao<Utilisateur>{
     }
 
     @Override
-    public Utilisateur fromResultSet(ResultSet resultSet) throws SQLException {
+    public Utilisateur fromResultSet(ResultSet resultSet)  {
+        Utilisateur utilisateur = null;
+        try {
+            utilisateur = Utilisateur.builder()
+                    .id(resultSet.getInt("id"))
+                    .nom(resultSet.getString("nom"))
+                    .prenoms(resultSet.getString("prenoms"))
+                    .email(resultSet.getString("email"))
+                    .password(resultSet.getString("password"))
+                    .role(resultSet.getString("role"))
+                    .build();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        return Utilisateur.builder()
-                .id(resultSet.getInt("id"))
-                .nom(resultSet.getString("nom"))
-                .prenoms(resultSet.getString("prenoms"))
-                .email(resultSet.getString("email"))
-                .password(resultSet.getString("password"))
-                .role(resultSet.getString("role"))
-                .build();
+        return utilisateur;
     }
 
 
@@ -63,6 +69,12 @@ public class UtilisateurDao extends AbstractDao<Utilisateur>{
         }
         super.update();
     }
+
+    @Override
+    public void remove(int id) throws DataAccessException {
+
+    }
+
 
     @Override
     public void close() throws Exception {

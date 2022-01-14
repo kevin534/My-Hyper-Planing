@@ -10,9 +10,8 @@ import java.sql.SQLException;
 
 public class CoursDao extends AbstractDao<Cours>{
     public CoursDao() {
-        super("INSERT INTO COURS(IDENSEIGNANTS,CODESALLE,GROUPECLASSE,CODEMATIERE, DATEDEBUT, DATEFIN,HEUREDEBUT) VALUES (?,?,?,?,?,?,?)",
-                "UPDATE COURS SET IDENSEIGNANTS=?, CODESALLE=?, GROUPECLASSE=?, CODEMATIERE=?,DATEDEBUT=?,DATEFIN=?,HEUREDEBUT=? WHERE ID=?");
-
+        super("INSERT INTO COURS(IDENSEIGNANTS,CODESALLE,GROUPECLASSE,CODEMATIERE, DATEDEBUT, DATEFIN) VALUES (?,?,?,?,?,?)",
+                "UPDATE COURS SET IDENSEIGNANTS=?, CODESALLE=?, GROUPECLASSE=?, CODEMATIERE=?,DATEDEBUT=?,DATEFIN=? WHERE ID=?");
     }
 
     @Override
@@ -29,7 +28,7 @@ public class CoursDao extends AbstractDao<Cours>{
              MatiereDao matiereDao = new MatiereDao()){
             cours = Cours.builder()
                     .id(resultSet.getInt("id"))
-                    .enseignant(enseignantDao.find(resultSet.getInt("id")).orElse(null))
+                    .enseignant(enseignantDao.find(resultSet.getInt("idEnseignants")).orElse(null))
                     .salle(salleDao.find(resultSet.getInt("codeSalle")).orElse(null))
                     .groupe(groupeDao.find(resultSet.getInt("groupeClasse")).orElse(null))
                     .matiere(matiereDao.find(resultSet.getInt("codeMatiere")).orElse(null))
@@ -37,7 +36,6 @@ public class CoursDao extends AbstractDao<Cours>{
                     .dateFin(resultSet.getDate("dateFin"))
                     .heureDebut(resultSet.getString("heureDebut"))
                     .build();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,7 +47,7 @@ public class CoursDao extends AbstractDao<Cours>{
     @Override
     public Cours persist(Cours cours) throws NotFoundException, DataAccessException {
         return persist(cours.getEnseignant(),cours.getSalle(),cours.getGroupe(),
-                cours.getMatiere(),cours.getDateDebut(),cours.getDateFin(),cours.getHeureDebut());
+                cours.getMatiere(),cours.getDateDebut(),cours.getDateFin(), cours.getHeureDebut());
     }
 
 
@@ -78,13 +76,17 @@ public class CoursDao extends AbstractDao<Cours>{
             updatePS.setInt(4,cours.getMatiere().getCodeMatiere());
             updatePS.setDate(5,cours.getDateDebut());
             updatePS.setDate(6,cours.getDateFin());
-            updatePS.setString(7,cours.getHeureDebut());
-            updatePS.setInt(8,cours.getId());
+            updatePS.setInt(7,cours.getId());
 
         } catch (SQLException e) {
             throw new DataAccessException(e.getLocalizedMessage());
         }
         super.update();
+    }
+
+    @Override
+    public void remove(int id) throws DataAccessException {
+            super.remove(id);
     }
 
     @Override

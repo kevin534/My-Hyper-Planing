@@ -7,5 +7,8 @@ import lombok.experimental.SuperBuilder;
 public class Responsable extends Utilisateur{
     private Groupe groupeClasse;
 
-
+    @Override
+    public String toString(){
+        return super.toString();
+    }
 }

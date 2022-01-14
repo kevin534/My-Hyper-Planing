@@ -7,7 +7,27 @@
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" fx:id="splashAnchorPane" prefHeight="620.0"
             prefWidth="1180.0" style="-fx-background-color: grey;"
-            xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.hyperplanning.HomeController">
+            xmlns="http://javafx.com/javafx/8.0.111" >
+   <BorderPane>
+       <top>
+           <MenuBar>
+               <Menu fx:id="planning" text="Planning">
+               </Menu>
+               <Menu fx:id="presence" text="Presence">
+                   <MenuItem fx:id="presenceList" text="Presence list">
+                   </MenuItem>
+                   <MenuItem fx:id="makePresence" text="Make Presence">
+                   </MenuItem>
+               </Menu>
+               <Menu fx:id="reservation" text="Reservation">
+                   <MenuItem fx:id="makeReservation" text="Make reservation">
+                   </MenuItem>
+                   <MenuItem fx:id="reservationList" text="list of reservation">
+                   </MenuItem>
+               </Menu>
+           </MenuBar>
+       </top>
+   </BorderPane>
     <children>
         <ScrollPane layoutX="-2.0" layoutY="71.0" prefHeight="562.0" prefWidth="804.0">
             <content>
@@ -42,8 +62,10 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                             </rowConstraints>
                             <children>
+
                                 <Text rotate="-24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        MONDAY"
                                       GridPane.columnIndex="1">
+
                                     <font>
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
@@ -132,238 +154,146 @@
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
                                 </Text>
-                                <TextArea fx:id="mon7" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue7" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed7" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur7" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fr7i" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon8" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue8" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed8" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4"
-                                          GridPane.rowIndex="2">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri8" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="2">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon9" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue9" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed9" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur9" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri9" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="3">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon10" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue10" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed10" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur10" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri10" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon11" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue11" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="5">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed11" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="5">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur11" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="5">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri11" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="5">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon12" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue12" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="6">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed12" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="6">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur12" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="6">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri12" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="6">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon1" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="7">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="tue1" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="2" GridPane.rowIndex="7">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="wed1" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="3" GridPane.rowIndex="7">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="thur1" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="4" GridPane.rowIndex="7">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="fri1" editable="false" prefHeight="200.0" prefWidth="200.0"
-                                          GridPane.columnIndex="5" GridPane.rowIndex="7">
-                                    <font>
-                                        <Font name="System Bold" size="12.0"/>
-                                    </font>
-                                </TextArea>
-                                <TextArea fx:id="mon2" editable="false" prefHeight="200.0" prefWidth="200.0"
+
+                                <Button fx:id="mon7"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+                                <Button fx:id="tue7"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                                <Button fx:id="wed7"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                                <Button fx:id="thur7"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+
+                                <Button fx:id="fr7i"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+
+                                <Button fx:id="mon8"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <Button fx:id="tue8"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+                                <Button fx:id="wed8"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+                                <Button fx:id="thur8" prefHeight="200.0" prefWidth="200.0"
+                                        GridPane.columnIndex="4"
+                                          GridPane.rowIndex="2"/>
+
+                                <Button fx:id="fri8"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+
+                                <Button fx:id="mon9"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                                <Button fx:id="tue9" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+                                <Button fx:id="wed9"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+                                <Button fx:id="thur9"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+
+                                <Button fx:id="fri9"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+
+                                <Button fx:id="mon10"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                                <Button fx:id="tue10"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+                                <Button fx:id="wed10"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+
+                                <Button fx:id="thur10"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+
+                                <Button fx:id="fri10" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+
+                                <Button fx:id="mon11"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                                <Button fx:id="tue11"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+                                <Button fx:id="wed11" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+
+                                <Button fx:id="thur11"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+
+                                <Button fx:id="fri11"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+
+                                <Button fx:id="mon12"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                                <Button fx:id="tue12"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+                                <Button fx:id="wed12" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+
+                                <Button fx:id="thur12"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="6"/>
+
+                                <Button fx:id="fri12"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="6"/>
+
+                                <Button fx:id="mon1"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                                <Button fx:id="tue1"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+
+                                <Button fx:id="wed1"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+
+                                <Button fx:id="thur1" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="4" GridPane.rowIndex="7"/>
+
+                                <Button fx:id="fri1"  prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="5" GridPane.rowIndex="7"/>
+
+                                <Button fx:id="mon2"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="1" GridPane.rowIndex="8"/>
-                                <TextArea fx:id="tue2" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="tue2"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="2" GridPane.rowIndex="8"/>
-                                <TextArea fx:id="wed2" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="wed2"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="3" GridPane.rowIndex="8"/>
-                                <TextArea fx:id="thur2" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="thur2"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="4" GridPane.rowIndex="8"/>
-                                <TextArea fx:id="fri2" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="fri2" prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="5" GridPane.rowIndex="8"/>
-                                <TextArea fx:id="fri3" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="fri3"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="5" GridPane.rowIndex="9"/>
-                                <TextArea fx:id="thur3" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="thur3" prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="4" GridPane.rowIndex="9"/>
-                                <TextArea fx:id="wed3" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="wed3"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="3" GridPane.rowIndex="9"/>
-                                <TextArea fx:id="tue3" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="tue3"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="2" GridPane.rowIndex="9"/>
-                                <TextArea fx:id="mon3" editable="false" prefHeight="200.0" prefWidth="200.0"
+                                <Button fx:id="mon3"  prefHeight="200.0" prefWidth="200.0"
                                           GridPane.columnIndex="1" GridPane.rowIndex="9"/>
                             </children>
                         </GridPane>
+
+                        <JFXComboBox fx:id="groupeList" layoutX="10.0" layoutY="30.0" />
+                        <JFXButton fx:id="groupeSubmit" layoutX="120.0" layoutY="30.0"  prefHeight="31.0"
+                                   prefWidth="90.0"
+                                   style="-fx-background-color: grey; -fx-background-radius: 8px;" text="Load"
+                                   textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                        </JFXButton>
                         <Text layoutX="289.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HYPERPLANNING">
                             <font>
                                 <Font name="System Bold" size="39.0"/>
@@ -375,7 +305,7 @@
         </ScrollPane>
 
         <JFXTabPane fx:id="AddModule" layoutX="805.0" layoutY="71.0" prefHeight="562.0" prefWidth="374.0">
-            <Tab text="Ajouter modules">
+            <Tab text="Manage module">
                 <content>
                     <AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
                                 prefWidth="200.0" style="-fx-background-color: white;">
@@ -383,12 +313,12 @@
                             <Separator layoutX="-3.0" layoutY="83.0" prefHeight="7.0" prefWidth="374.0"
                                        style="-fx-background-color: black;"/>
                             <JFXTextField fx:id="Addlevel" layoutX="14.0" layoutY="13.0" prefHeight="25.0"
-                                          prefWidth="341.0" promptText="Classe"/>
+                                          prefWidth="341.0" promptText="Class"/>
                             <JFXTextField fx:id="Addcourse" layoutX="13.0" layoutY="101.0" prefHeight="25.0"
-                                          prefWidth="322.0" promptText="Nom du Cours"/>
+                                          prefWidth="322.0" promptText="Course Title"/>
                             <JFXTextField fx:id="Addvenue" layoutX="15.0" layoutY="270.0" prefHeight="25.0"
-                                          prefWidth="237.0" promptText="Nom de la Matiere"/>
-                            <JFXButton fx:id="submitLevel" layoutX="110.0" layoutY="46.0" onAction="#submitLevel"
+                                          prefWidth="237.0" promptText="Subject Title"/>
+                            <JFXButton fx:id="submitLevel" layoutX="110.0" layoutY="46.0"
                                        prefHeight="31.0" prefWidth="121.0"
                                        style="-fx-background-color: green; -fx-background-radius: 8px;" text="Submit"
                                        textFill="WHITE">
@@ -404,7 +334,7 @@
                                     </ImageView>
                                 </graphic>
                             </JFXButton>
-                            <JFXButton fx:id="submitVenue" layoutX="115.0" layoutY="312.0" onAction="#submitVenue"
+                            <JFXButton fx:id="submitVenue" layoutX="115.0" layoutY="312.0"
                                        prefHeight="31.0" prefWidth="121.0"
                                        style="-fx-background-color: green; -fx-background-radius: 8px;" text="Submit"
                                        textFill="WHITE">
@@ -420,7 +350,7 @@
                                     </ImageView>
                                 </graphic>
                             </JFXButton>
-                            <JFXButton fx:id="submitCourse" layoutX="113.0" layoutY="204.0" onAction="#Addcourse"
+                            <JFXButton fx:id="submitCourse" layoutX="113.0" layoutY="204.0"
                                        prefHeight="31.0" prefWidth="121.0"
                                        style="-fx-background-color: green; -fx-background-radius: 8px;" text="Submit"
                                        textFill="WHITE">
@@ -439,16 +369,16 @@
                             <JFXTextField fx:id="VenueCapacity" layoutX="282.0" layoutY="270.0" prefHeight="25.0"
                                           prefWidth="73.0" promptText="Description"/>
                             <JFXComboBox fx:id="LeveInCourse" layoutX="14.0" layoutY="156.0" prefHeight="25.0"
-                                         prefWidth="322.0" promptText="Classe"/>
+                                         prefWidth="322.0" promptText="Class"/>
                             <Separator layoutX="-3.0" layoutY="358.0" prefHeight="7.0" prefWidth="374.0"
                                        style="-fx-background-color: black;"/>
-                            <JFXTextField fx:id="lecturer" layoutX="13.0" layoutY="374.0" onAction="#Addcourse"
+                            <JFXTextField fx:id="lecturer" layoutX="13.0" layoutY="374.0"
                                           prefHeight="25.0" prefWidth="322.0"
-                                          promptText="Nom Enseignant"/>
+                                          promptText="Teacher name"/>
                             <JFXComboBox fx:id="lecturercourse" layoutX="14.0" layoutY="429.0" prefHeight="25.0"
-                                         prefWidth="322.0" promptText="Matiere"/>
+                                         prefWidth="322.0" promptText="Subject"/>
 
-                            <JFXButton fx:id="submitVenue1" layoutX="122.0" layoutY="476.0" onAction="#submitLecturer"
+                            <JFXButton fx:id="submitVenue1" layoutX="122.0" layoutY="476.0"
                                        prefHeight="31.0" prefWidth="121.0"
                                        style="-fx-background-color: green; -fx-background-radius: 8px;" text="Submit"
                                        textFill="WHITE">
@@ -470,7 +400,7 @@
                     </AnchorPane>
                 </content>
             </Tab>
-            <Tab text="Ajouter un cours">
+            <Tab text="Add Course">
                 <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
                                 style="-fx-background-color: white;" stylesheets="@style.css">
@@ -478,32 +408,30 @@
                             <Separator layoutX="9.0" layoutY="24.0" prefHeight="0.0" prefWidth="96.0"
                                        style="-fx-background-color: black;"/>
                             <Text layoutX="11.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Gérer Cours">
+                                  text="Manage Course">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
                             </Text>
                             <ComboBox fx:id="time" layoutX="18.0" layoutY="91.0" prefHeight="25.0" prefWidth="341.0"
-                                      promptText="Heure"/>
-                            <ComboBox fx:id="cday" layoutX="18.0" layoutY="236.0" prefHeight="25.0" prefWidth="341.0"
-                                      promptText="Jour"/>
+                                      promptText="Hour"/>
                             <ComboBox fx:id="cvenue" layoutX="19.0" layoutY="140.0" prefHeight="25.0" prefWidth="341.0"
-                                      promptText="Salle"/>
+                                      promptText="Room"/>
                             <ComboBox fx:id="ccourse" layoutX="19.0" layoutY="188.0" prefHeight="25.0" prefWidth="341.0"
-                                      promptText="Groupe"/>
-                            <JFXTextField fx:id="Creneau" layoutX="19.0" layoutY="345.0" prefHeight="25.0" prefWidth="341.0" promptText="Date du cours"/>
-                            <JFXButton layoutX="123.0" layoutY="405.0" onAction="#initiate" prefHeight="31.0"
+                                      promptText="Group"/>
+                            <DatePicker fx:id="Creneau" layoutX="18.0" layoutY="236.0" prefHeight="25.0" prefWidth="138.0" />
+                             <JFXButton fx:id="submitCours" layoutX="123.0" layoutY="405.0"  prefHeight="31.0"
                                        prefWidth="121.0"
-                                       style="-fx-background-color: green; -fx-background-radius: 8px;" text="Enregistrer"
+                                       style="-fx-background-color: green; -fx-background-radius: 8px;" text="Submit"
                                        textFill="WHITE">
                                 <font>
                                     <Font name="System Bold" size="15.0"/>
                                 </font>
                             </JFXButton>
                             <ComboBox fx:id="levelTable" layoutX="19.0" layoutY="45.0" prefHeight="25.0"
-                                      prefWidth="341.0" promptText="Matiere"/>
+                                      prefWidth="341.0" promptText="Subject"/>
                             <ComboBox fx:id="leturerTable" layoutX="18.0" layoutY="288.0" prefHeight="25.0"
-                                      prefWidth="341.0" promptText="Enseignant"/>
+                                      prefWidth="341.0" promptText="Teacher"/>
                         </children>
                     </AnchorPane>
                 </content>
@@ -514,29 +442,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </Text>
-        <JFXButton layoutX="1043.0" onAction="#emptyAll" onMouseEntered="#show" onMouseExited="#hide" prefHeight="31.0"
-                   prefWidth="133.0" style="-fx-background-color: red; -fx-background-radius: 8px;"
-                   text="Vider la bd" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="12.0"/>
-            </font>
-            <graphic>
-                <ImageView fitHeight="20.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/icons8_Trash_Can_64px.png"/>
-                    </image>
-                </ImageView>
-            </graphic>
-        </JFXButton>
-        <JFXComboBox fx:id="groupeList" layoutX="0.0" layoutY="80.0" />
-        <JFXButton fx:id="groupeSubmit" layoutX="170.0" layoutY="107.0"  prefHeight="31.0"
-                   prefWidth="90.0"
-                   style="-fx-background-color: grey; -fx-background-radius: 8px;" text="Charger"
-                   textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="15.0"/>
-            </font>
-        </JFXButton>
+
         <Text layoutX="159.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0"
               text="HYPERPLANNING">
             <font>
@@ -550,5 +456,6 @@
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Text>
+
     </children>
 </AnchorPane>

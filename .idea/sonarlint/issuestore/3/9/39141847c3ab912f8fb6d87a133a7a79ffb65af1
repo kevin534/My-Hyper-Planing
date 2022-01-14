@@ -1,0 +1,24 @@
+
+T
+java:S5993"9Change the visibility of this constructor to "protected".(Ùˆ¾øýÿÿÿÿ
+]
+java:S1659"GDeclare "_findAllPS" and all following declarations on a separate line.(±‰ó—
+Q	java:S125""<This block of commented-out lines of code should be removed.(•Ä¶ñ
+@
+java:S1068"*Remove this unused "findPS" private field.(¦øœ
+C
+java:S1068"-Remove this unused "findAllPS" private field.(ßê±£
+g
+java:S1192"LDefine a constant instead of duplicating this literal " WHERE ID=?" 4 times.(š“Â†ûÿÿÿÿ
+j
+java:S1192"ODefine a constant instead of duplicating this literal "SELECT * FROM " 5 times.(š“Â†ûÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©°‚Ëÿÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‰ó—
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‰ó—
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‰ó—
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‰ó—
+f	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ‚¿³
+k	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ìè üÿÿÿÿ
+f	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ‚¿³
+k	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þüÑÍûÿÿÿÿ
+m	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ‚¿³8Õ§°¯å/

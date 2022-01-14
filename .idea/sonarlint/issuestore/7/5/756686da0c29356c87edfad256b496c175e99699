@@ -1,0 +1,16 @@
+
+x	java:S116"^Rename this field "datePicker_empreint" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œûîûÿÿÿÿ
+q	java:S116"\Rename this field "datePicker_retour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¹µÊ
+m	java:S116"YRename this field "liste_materiel" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿õÍ1
+r	java:S116"]Rename this field "id_button_materiel" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖúÀï
+=
+java:S1659"(Declare "connection" on a separate line.(¿õÍ1
+h	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ÜÃüÿÿÿÿ
+m
+java:S3776="RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(†ÜÃüÿÿÿÿ
+>
+java:S1481A"(Remove this unused "tmp" local variable.(¡µ®»
+P
+java:S1141a"5Extract this nested try block into a separate method.(”¨œØüÿÿÿÿ
+k	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þ¼‡ºúÿÿÿÿ
+k	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”àáÚýÿÿÿÿ

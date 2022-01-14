@@ -10,5 +10,9 @@ public class Salle {
     private String libelleSalle;
     private String batiment;
 
+    @Override
+    public String toString(){
+        return this.libelleSalle;
+    }
 
 }

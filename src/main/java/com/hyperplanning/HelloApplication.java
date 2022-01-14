@@ -12,18 +12,19 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    String role = "RESPONSABLE";
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/login.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load());
-        //stage.setTitle("Hello!");
+        stage.setTitle("Login!");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.initStyle(StageStyle.DECORATED);
         stage.show();
 
-        //Utilisation builder
-        //Enseignant enseignant = Enseignant.builder().build();
     }
 
     public static void main(String[] args) {

@@ -9,5 +9,12 @@ public class Groupe {
     private String libelleClasse;
 
 
+    @Override
+    public String toString(){
+            return this.libelleClasse;
+    }
+
+
+
 
 }

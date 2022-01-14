@@ -24,7 +24,7 @@ interface Dao<E> extends AutoCloseable{
 
     void update(E e) throws DataAccessException;
 
-    void remove(long id) throws DataAccessException;
+    void remove(int id) throws DataAccessException;
 
     default void remove(E e) throws DataAccessException {
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
+   <top>
+      <Pane prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="24.0" prefHeight="49.0" prefWidth="96.0" text="Dashborad">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children></Pane>
+   </top>
+   <left>
+      <Pane prefHeight="349.0" prefWidth="131.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="-1.0" prefHeight="350.0" prefWidth="143.0" style="-fx-background-color: #74992e;">
+
+               <children>
+                  <JFXButton  fx:id="viewEmploiResponsable"  prefHeight="80.0" prefWidth="141.0" style="-fx-background-color: #74992e;" text="Planning">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXButton>
+
+               </children></VBox>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a9a9a9;" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="contentArea" prefHeight="338.0" prefWidth="137.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

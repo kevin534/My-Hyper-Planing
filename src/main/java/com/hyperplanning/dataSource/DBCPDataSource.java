@@ -1,6 +1,5 @@
 package com.hyperplanning.dataSource;
 
-import com.hyperplanning.App;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
@@ -23,8 +22,11 @@ public class DBCPDataSource {
     }
 
     public static Connection getConnection() throws SQLException {
+       
         return ds.getConnection();
     }
 
-    public DBCPDataSource(){ }
+    private DBCPDataSource(){ }
+
+
 }

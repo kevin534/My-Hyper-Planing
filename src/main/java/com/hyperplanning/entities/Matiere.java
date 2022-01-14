@@ -8,5 +8,10 @@ public class Matiere {
     private int codeMatiere;
     private String libelleMatiere;
 
+    @Override
+    public String toString(){
+        return this.libelleMatiere;
+    }
+
 
 }

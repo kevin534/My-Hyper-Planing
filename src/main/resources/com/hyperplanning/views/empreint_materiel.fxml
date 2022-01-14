@@ -4,26 +4,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="247.0" prefWidth="348.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hyperplanning.EmpreintMaterielController">
-    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Liste Matériel :">
+<VBox prefHeight="247.0" maxWidth="512" prefWidth="348.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
+    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Material List :">
 
     </Label>
     <ComboBox fx:id="liste_materiel" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="138.0" styleClass="box" />
 
-    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Date Empreint :">
+    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Borrowing Date :">
 
     </Label>
     <DatePicker fx:id="datePicker_empreint" layoutX="150.0" layoutY="22.0" prefHeight="25.0" prefWidth="138.0" />
 
 
-    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Date Retour :">
+    <Label layoutX="56.0" layoutY="25.0" prefHeight="19.0" prefWidth="86.0" text="Return Date :">
 
     </Label>
     <DatePicker fx:id="datePicker_retour" layoutX="150.0" layoutY="22.0" prefHeight="25.0" prefWidth="136.0" />
 
 
 
-    <Button fx:id="id_button_materiel" onAction="#SendMaterial" text="Envoyé" />
+    <Button fx:id="id_button_materiel" text="Request" />
 
 
 

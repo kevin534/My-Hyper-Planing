@@ -18,4 +18,12 @@ public class Cours {
     private String heureDebut;
 
 
+    @Override
+    public String toString(){
+        return "Enseignant : " +this.enseignant+
+                " Salle : "+this.salle.getLibelleSalle()+" Matiere : "+this.getMatiere().getLibelleMatiere()
+                +" Groupe : "+this.getGroupe().getLibelleClasse()+ " Date : "+this.getDateDebut() +" Heure : "
+                +this.getHeureDebut();
+    }
+
 }

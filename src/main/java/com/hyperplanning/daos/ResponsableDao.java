@@ -28,6 +28,13 @@ public class ResponsableDao extends AbstractDao<Responsable> {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) { /* Ignored */}
+            }
         }
 
         return responsable;
@@ -39,19 +46,18 @@ public class ResponsableDao extends AbstractDao<Responsable> {
     }
 
     @Override
-    public void remove(Responsable responsable) throws DataAccessException {
-        super.remove(responsable);
+    public void update(Responsable responsable) throws DataAccessException {
+
     }
+
+    @Override
+    public void remove(int id) throws DataAccessException {
+
+    }
+
 
     @Override
     public void close() throws Exception {
-
-    }
-
-
-
-    @Override
-    public void update(Responsable responsable) throws DataAccessException {
 
     }
 }

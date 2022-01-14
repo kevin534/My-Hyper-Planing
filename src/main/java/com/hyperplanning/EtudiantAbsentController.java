@@ -1,97 +1,111 @@
 package com.hyperplanning;
-        import com.hyperplanning.daos.*;
-        import com.hyperplanning.dataSource.DBCPDataSource;
-        import com.hyperplanning.entities.*;
-        import com.hyperplanning.entities.Etudiant;
-        import com.jfoenix.controls.JFXDatePicker;
-        import javafx.collections.FXCollections;
-        import javafx.collections.ObservableList;
-        import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
-        import javafx.fxml.Initializable;
-        import javafx.scene.control.*;
-        import javafx.scene.control.cell.PropertyValueFactory;
-        import javafx.scene.control.cell.TextFieldTableCell;
-        import java.net.URL;
-        import java.sql.*;
-        import java.util.Calendar;
-        import java.util.Objects;
-        import java.util.ResourceBundle;
+import com.hyperplanning.daos.*;
+import com.hyperplanning.dataSource.DBCPDataSource;
+import com.hyperplanning.entities.*;
+import com.hyperplanning.entities.Etudiant;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import lombok.extern.java.Log;
 
+import java.net.URL;
+import java.sql.*;
+import java.util.Calendar;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+@Log
 public class EtudiantAbsentController implements Initializable {
-    public Button id_button_afficher;
+
+    int id;
     @FXML
-    private TableView<Etudiant> liste_personne_absent;
+    // an TableView of object
+    private TableView<Object> liste_personne_absent;
+
     @FXML
-    private JFXDatePicker datePicker;
+    private TableColumn<Matiere, String> name_col;
     @FXML
-    private ComboBox<Etudiant> liste_etudiant;
-    private ComboBox<String> liste_et;
+    private TableColumn<Cours, String> date_debut_col;
     @FXML
-    private TableColumn<Etudiant, Integer> id_col;
-    @FXML
-    private TableColumn<Etudiant, String> name_col;
-    // an observable list of students
-    private ObservableList<Etudiant> students = FXCollections.observableArrayList();
+    private TableColumn<Cours, String> heure_debut_col;
+    // an observable list of Object
+    private ObservableList<Object> cours = FXCollections.observableArrayList();
+    // an observable list of Etudiant
     private ObservableList<Etudiant> stud_list = FXCollections.observableArrayList();
-    private Calendar cal = Calendar.getInstance();
+
+    // get connection
     Connection connection;
-    {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             connection = DBCPDataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
         // load table on class start
-        // define what each column is going to hold (based on student class)
-        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name_col.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        liste_personne_absent.setItems(students); // set table items as the Students observable list
+        // define what each column is going to hold (based on cours class)
+        name_col.setCellValueFactory(new PropertyValueFactory<Matiere,String>("matiere"));
+        date_debut_col.setCellValueFactory(new PropertyValueFactory<Cours,String>("dateDebut"));
+        heure_debut_col.setCellValueFactory(new PropertyValueFactory<Cours,String>("heureDebut"));
+        liste_personne_absent.setItems(cours); // set table items as the cours observable list
         liste_personne_absent.setEditable(true); // enable table editing
         liste_personne_absent.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY); // resize column based on whole table(window) size
 
-        Statement statement = null;
-        try {
-            statement = connection.createStatement();
+
+        /*try(  Statement statement = connection.createStatement();
+              EtudiantDao etudiantDao = new EtudiantDao()) {
+
+            //selects students to do presence
             ResultSet resultSet = statement.executeQuery("SELECT * FROM utilisateurs  INNER JOIN etudiants  ON utilisateurs.id = etudiants.id " +
                     "INNER JOIN presence ON etudiants.id = presence.id ");
-            EtudiantDao etudiantDao = new EtudiantDao();
+
             while(resultSet.next()) {
+                // add new student to list of students
                 stud_list.add(new Etudiant(resultSet.getInt("id"), resultSet.getString("nom"),
                         resultSet.getString("prenoms"), resultSet.getString("email"),resultSet.getString("password"),
-                        resultSet.getBoolean("present")));
+                        resultSet.getBoolean("present"),resultSet.getString("excuse")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        liste_etudiant.setItems(stud_list);
+        liste_etudiant.setItems(stud_list);*/
+        LoadAbsent();
     }
+
+    public  EtudiantAbsentController(int id){this.id = id;}
     public void LoadAbsent() {
-        if (liste_etudiant.getValue() != null) {
+
             liste_personne_absent.getItems().clear(); // clear table content before adding them again
-            Etudiant courSelected = liste_etudiant.getValue();
-            System.out.println("ma liste selon l'id:  " + courSelected.getId());
-            Statement statement = null;
-            try {
-                statement = connection.createStatement();
-                ResultSet rs = statement.executeQuery("SELECT * FROM utilisateurs  INNER JOIN etudiants  ON utilisateurs.id = etudiants.id  " +
-                        "INNER JOIN presence ON presence.id = etudiants.id  WHERE presence.present = 0 AND presence.id = "+courSelected.getId());
-                //WHERE presence.present = 0
+            //Etudiant courSelected = liste_etudiant.getValue();
+
+            try(Statement statement = connection.createStatement()) {
+
+                // selects the courses for which the student is absent
+                ResultSet rs = statement.executeQuery("SELECT * FROM presence INNER JOIN utilisateurs ON presence.id = utilisateurs.id INNER JOIN cours ON presence.idCours = cours.id "+
+                        "INNER JOIN matieres ON cours.codeMatiere = matieres.id WHERE presence.present = 0  AND utilisateurs.id ="+id);
+
                 while (rs.next()) {
-                    // store each row in a student object
-                    students.add(new Etudiant(rs.getInt("id"), rs.getString("nom"),
-                            rs.getString("prenoms"), rs.getString("email"), rs.getString("password"),
-                            rs.getBoolean("present")));
+                    // load object Matiere
+                    Matiere matiere = Matiere.builder().
+                            libelleMatiere(rs.getString("libelleMatiere")).build();
+                    // date of cours where student is absent
+                    Date dateCours = rs.getDate("dateDebut");
+                    // hour that corse is begin
+                    String heure = String.valueOf(rs.getString("heureDebut"));
+                    // load object Cours
+                    Cours cours_ = Cours.builder().matiere(matiere).dateDebut(dateCours).heureDebut(heure.toString()).build();
+                    // add new Cours to list of cours
+                    cours.add(cours_);
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Error");
-            }
-            //id_button_afficher.setDisable(true);
-        }
+                log.log(Level.SEVERE, "Erreur: "+e.getMessage());            }
+
 
     }
 }
