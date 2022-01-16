@@ -24,9 +24,7 @@ public class HelloApplication extends Application {
         stage.setResizable(false);
         stage.initStyle(StageStyle.DECORATED);
         stage.show();
-
     }
-
     public static void main(String[] args) {
         launch();
     }
